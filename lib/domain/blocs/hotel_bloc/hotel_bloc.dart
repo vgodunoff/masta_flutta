@@ -19,6 +19,9 @@ class HotelBloc extends Bloc<HotelBlocEvent, HotelBlocState> {
           emit(HotelFailureLoadState(message: error.toString()));
         }
       }
+      if (event is HotelChoose) {
+        emit(HotelGoToChooseRoomState());
+      }
     });
   }
 }

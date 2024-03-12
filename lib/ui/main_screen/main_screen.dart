@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:masta_flutta/domain/blocs/hotel_bloc/hotel_bloc.dart';
 import 'package:masta_flutta/ui/main_screen/hotel_detail_info.dart';
-import 'package:masta_flutta/ui/main_screen/hotel_main_info.dart';
+import 'package:masta_flutta/ui/main_screen/button_choose.dart';
 import 'package:masta_flutta/ui/main_screen/hotel_photo_and_info_widget.dart';
 
 class MainScreen extends StatelessWidget {
@@ -16,37 +16,45 @@ class MainScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: BlocConsumer<HotelBloc, HotelBlocState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is HotelLoadingState) {
+            const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (state is HotelGoToChooseRoomState) {
+            //Navigator.
+          }
+        },
         builder: (context, state) {
-          print(state);
           if (state is HotelLoadedState) {
-            return const SingleChildScrollView(
+            return SingleChildScrollView(
               child: ColoredBox(
-                color: Color(0xffF6F6F9),
+                color: const Color(0xffF6F6F9),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     // First Section
-                    HotelPhotoAndInfoWidget(),
-                    SizedBox(
+                    const HotelPhotoAndInfoWidget(),
+                    const SizedBox(
                       height: 8,
                     ),
 
                     // Second Section
-                    HotelMainInfoWidget(),
-                    SizedBox(
+                    const HotelMainInfoWidget(),
+                    const SizedBox(
                       height: 12,
                     ),
 
-                    // Third Section
-                    HotelDetailInfo(),
+                    // Button
+                    ButtonChoose(
+                      buttonText: 'К выбору номера',
+                      event: HotelChoose(),
+                    ),
                   ],
                 ),
               ),
-            );
-          } else if (state is HotelLoadingState) {
-            return const Center(
-              child: CircularProgressIndicator(),
             );
           } else if (state is HotelFailureLoadState) {
             return const Text('Something went wrong');

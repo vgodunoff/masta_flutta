@@ -4,3 +4,5 @@ part of 'hotel_bloc.dart';
 sealed class HotelBlocEvent {}
 
 final class HotelFetched extends HotelBlocEvent {}
+
+final class HotelChoose extends HotelBlocEvent {}

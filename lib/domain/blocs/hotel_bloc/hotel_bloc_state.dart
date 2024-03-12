@@ -7,6 +7,8 @@ final class HotelInitial extends HotelBlocState {}
 
 final class HotelLoadingState extends HotelBlocState {}
 
+final class HotelGoToChooseRoomState extends HotelBlocState {}
+
 final class HotelLoadedState extends HotelBlocState {
   final Hotel hotel;
 

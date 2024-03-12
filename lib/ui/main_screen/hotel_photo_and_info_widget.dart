@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masta_flutta/ui/main_screen/carousel_image.dart';
 
 class HotelPhotoAndInfoWidget extends StatelessWidget {
   const HotelPhotoAndInfoWidget({
@@ -24,37 +25,13 @@ class HotelPhotoAndInfoWidget extends StatelessWidget {
                   child: Container(
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(15))),
-                    child: Image.asset(
-                      'assets/images/image_20.jpg',
-                      fit: BoxFit.contain,
-                    ),
+                    child: const CarouserHotelPhoto(),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 21),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-              decoration: BoxDecoration(
-                  color: const Color(0x33FFC700),
-                  borderRadius: BorderRadius.circular(5)),
-              child: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.home,
-                    color: Color(0xffFFA800),
-                  ),
-                  Text(
-                    '5 Превосходно',
-                    style: TextStyle(
-                        color: Color(0xffFFA800),
-                        fontFamily: 'SF-Pro-Display',
-                        fontSize: 16),
-                  )
-                ],
-              ),
-            ),
+            const _HotelGrade(),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -104,6 +81,38 @@ class HotelPhotoAndInfoWidget extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _HotelGrade extends StatelessWidget {
+  const _HotelGrade({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      decoration: BoxDecoration(
+          color: const Color(0x33FFC700),
+          borderRadius: BorderRadius.circular(5)),
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.home,
+            color: Color(0xffFFA800),
+          ),
+          Text(
+            '5 Превосходно',
+            style: TextStyle(
+                color: Color(0xffFFA800),
+                fontFamily: 'SF-Pro-Display',
+                fontSize: 16),
+          )
+        ],
       ),
     );
   }
