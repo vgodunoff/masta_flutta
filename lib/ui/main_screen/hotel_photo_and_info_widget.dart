@@ -31,7 +31,7 @@ class HotelPhotoAndInfoWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 21),
-            const _HotelGrade(),
+            const HotelGrade(),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -86,8 +86,8 @@ class HotelPhotoAndInfoWidget extends StatelessWidget {
   }
 }
 
-class _HotelGrade extends StatelessWidget {
-  const _HotelGrade({
+class HotelGrade extends StatelessWidget {
+  const HotelGrade({
     super.key,
   });
 
