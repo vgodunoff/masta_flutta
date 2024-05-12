@@ -8,7 +8,7 @@ class NetworkClient {
   final _client = HttpClient();
 
   Uri _makeUri(String path, [Map<String, dynamic>? parameters]) {
-    final uri = Uri.parse('${Configuration.host}$path');
+    final uri = Uri.parse('${Configurations.host}$path');
     if (parameters != null) {
       return uri.replace(queryParameters: parameters);
     } else {

@@ -1,3 +1,3 @@
-class Configuration {
+class Configurations {
   static const host = 'https://run.mocky.io';
 }

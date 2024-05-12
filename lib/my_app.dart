@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:masta_flutta/domain/blocs/hotel_bloc/hotel_bloc.dart';
+//import 'package:flutter_bloc/flutter_bloc.dart';
+//import 'package:masta_flutta/domain/blocs/hotel_bloc/hotel_bloc.dart';
 import 'package:masta_flutta/ui/appartment/list_rooms_screen.dart';
-import 'package:masta_flutta/ui/appartment/room.dart';
+//import 'package:masta_flutta/ui/appartment/room.dart';
 //import 'package:masta_flutta/domain/data/repository/repository.dart';
 import 'package:masta_flutta/ui/main_screen/main_screen.dart';
 
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
   void _handleHotelTapped(String hotel) {
     setState(() {
       _selectedHotel = hotel;
-      print(_selectedHotel);
+      //print(_selectedHotel);
     });
   }
 
