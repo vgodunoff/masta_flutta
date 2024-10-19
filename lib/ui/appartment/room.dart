@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masta_flutta/ui/booking_room/booking_bloc/tourist_add_remove_bloc/add_remove_bloc.dart';
 import 'package:masta_flutta/ui/booking_room/booking_room.dart';
 import 'package:masta_flutta/ui/main_screen/carousel_image.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:masta_flutta/domain/blocs/hotel_bloc/hotel_bloc.dart';
+//import 'package:flutter_bloc/flutter_bloc.dart';
+//import 'package:masta_flutta/domain/blocs/hotel_bloc/hotel_bloc.dart';
 
 class Room extends StatelessWidget {
   const Room({super.key});
@@ -161,8 +163,14 @@ class Room extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const BookingRoom(),
+                    builder: (context) => BlocProvider(
+                      create: (context) => AddRemoveBloc(),
+                      child: const BookingRoom(),
+                    ),
                   ));
+
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //     builder: (context) => const BookingRoom()));
                   //BlocProvider.of<HotelBloc>(context).add(HotelChoose());
                 },
                 child: const Text(

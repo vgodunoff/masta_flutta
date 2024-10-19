@@ -58,10 +58,12 @@ class AppStyles {
     color: Color(0xFFA9ABB7),
   );
 
-  static const TextStyle kHintW400F17 = TextStyle(
+  static const TextStyle kHintW400F17Sp1 = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontWeight: FontWeight.w400,
     fontSize: 17,
     color: Color(0xFFA9ABB7),
+    letterSpacing: 0.2,
+    height: 1.2,
   );
 }
