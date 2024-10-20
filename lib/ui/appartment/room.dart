@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masta_flutta/navigation/navigation.dart';
 import 'package:masta_flutta/ui/booking_room/booking_bloc/tourist_add_remove_bloc/add_remove_bloc.dart';
 import 'package:masta_flutta/ui/booking_room/booking_room.dart';
 import 'package:masta_flutta/ui/main_screen/carousel_image.dart';
@@ -162,16 +163,15 @@ class Room extends StatelessWidget {
                   backgroundColor: const Color(0xff0D72FF),
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => BlocProvider(
-                      create: (context) => AddRemoveBloc(),
-                      child: const BookingRoom(),
-                    ),
-                  ));
-
                   // Navigator.of(context).push(MaterialPageRoute(
-                  //     builder: (context) => const BookingRoom()));
-                  //BlocProvider.of<HotelBloc>(context).add(HotelChoose());
+                  //   builder: (context) => BlocProvider(
+                  //     create: (context) => AddRemoveBloc(),
+                  //     child: const BookingRoom(),
+                  //   ),
+                  // ));
+
+                  Navigator.pushNamed(
+                      context, NavigationRoutNames.bookingRoomScreen);
                 },
                 child: const Text(
                   'Выбрать номер',

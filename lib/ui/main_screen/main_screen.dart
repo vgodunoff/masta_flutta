@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masta_flutta/navigation/navigation.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:masta_flutta/domain/blocs/hotel_bloc/hotel_bloc.dart';
 import 'package:masta_flutta/ui/main_screen/hotel_main_info.dart';
@@ -6,9 +7,9 @@ import 'package:masta_flutta/ui/main_screen/hotel_main_info.dart';
 import 'package:masta_flutta/ui/main_screen/hotel_photo_and_info_widget.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key, required this.onTapped});
+  const MainScreen({super.key});
 
-  final ValueChanged<String> onTapped;
+  //final ValueChanged<String> onTapped;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,11 @@ class MainScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff0D72FF),
                       ),
-                      onPressed: () => onTapped('Steigenberger Makadi'),
+                      onPressed: () {
+                        //'Steigenberger Makadi'
+                        Navigator.pushNamed(
+                            context, NavigationRoutNames.listRoomScreen);
+                      },
                       child: const Text(
                         'К выбору номера',
                         style: TextStyle(

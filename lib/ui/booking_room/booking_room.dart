@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:masta_flutta/navigation/navigation.dart';
 import 'package:masta_flutta/ui/app_styles.dart';
 import 'package:masta_flutta/ui/booking_room/booking_bloc/tourist_add_remove_bloc/add_remove_bloc.dart';
 import 'package:masta_flutta/ui/booking_room/booking_bloc/tourist_form_bloc/booking_bloc.dart';
@@ -259,9 +260,11 @@ class BookingRoom extends StatelessWidget {
                       //завершаем бронирование, оплачиваем, запоминаем данные о туристах, переходим на страницу Заказ оплачен
 
                       // переходим на страницу Заказ оплачен
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const CompleteOrder(),
-                      ));
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //   builder: (context) => const CompleteOrder(),
+                      // ));
+                      Navigator.pushNamed(
+                          context, NavigationRoutNames.completedOrderScreen);
                     },
                     child: const Text(
                       'Оплатить 198 036 руб.',
